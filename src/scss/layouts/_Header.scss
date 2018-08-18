@@ -3,5 +3,12 @@
         border-bottom: 1px solid #e8e8e8;
         background-color: #fff;
         height: 66px;
+
+        .navbar-brand {
+            img {
+                height: 40px;
+                width: auto;
+            }
+        }
     }
 }

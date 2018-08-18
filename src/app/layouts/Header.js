@@ -26,7 +26,7 @@ class Header extends Component {
     render() {
         return (
             <div className='Header'>
-                <Navbar color="light" light expand="md">
+                <Navbar expand="md">
                     <NavbarBrand tag={Link} to="/">Product Hunt</NavbarBrand>
                     <NavbarToggler onClick={this._toggle}/>
                     <Collapse isOpen={this.state.isOpen} navbar>

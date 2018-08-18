@@ -1,0 +1,157 @@
+.ProductItem {
+    border-bottom: 1px solid #e8e8e8;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .Inner {
+        display: flex;
+        padding: 15px;
+        background-color: #fff;
+        transition: all 200ms ease-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f9f9f9;
+
+            .Right {
+                .Meta {
+                    .Actions {
+                        .InnerActions {
+                            .Link {
+                                display: inline-flex;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .Left {
+            margin-right: 15px;
+
+            .Thumbnail {
+                img {
+                    width: 80px;
+                    height: auto;
+                }
+            }
+        }
+
+        .Right {
+            color: #999;
+            flex: 1;
+
+            .Content {
+                .Title {
+                    font-size: 20px;
+                    font-weight: 300;
+                    line-height: 32px;
+                    margin: 0;
+                }
+
+                .Description {
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 20px;
+                    margin-bottom: 5px;
+                }
+            }
+
+            .Meta {
+                font-size: 11px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .Categories {
+                    .Category {
+                        text-transform: uppercase;
+                        background-color: #f8f8f8;
+                        color: inherit;
+                        line-height: 22px;
+                        display: inline-block;
+                        padding: 0 8px;
+                        text-decoration: none;
+                        transition: all 200ms ease-out;
+                        border-radius: 3px;
+                        border: 1px solid #e8e8e8;
+
+                        &:hover {
+                            background-color: #ebebeb;
+                        }
+                    }
+                }
+
+                .Actions {
+                    .InnerActions {
+                        display: flex;
+                        align-items: center;
+
+                        .Action {
+                            background-color: #fff;
+                            transition: all 200ms ease-out;
+                            cursor: pointer;
+                            outline: none;
+
+                            &:focus {
+
+                            }
+
+                            &:hover {
+                                background-color: #e8e8e8;
+                            }
+                        }
+
+                        .Link {
+                            margin-right: 10px;
+                            border: 1px solid #e8e8e8;
+                            border-radius: 3px;
+                            display: none;
+
+                            a {
+                                cursor: pointer;
+                                color: #999;
+                                text-decoration: none;
+                                line-height: 24px;
+                                display: inline-flex;
+                                padding: 0 12px;
+                                font-size: 16px;
+
+                                .Icon {
+                                    font-size: inherit;
+                                    position: relative;
+                                    top: -2px;
+                                }
+                            }
+                        }
+
+                        .Vote {
+                            display: flex;
+                            align-items: center;
+                            color: #000;
+                            font-weight: 600;
+                            font-size: 16px;
+                            border: 1px solid #e8e8e8;
+                            border-radius: 3px;
+                            line-height: 24px;
+                            padding: 0 8px;
+
+                            &.voted {
+                                background: #da552f;
+                                border-color: #da552f;
+                                color: #fff;
+                            }
+
+                            .Number {
+                                font-size: 11px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

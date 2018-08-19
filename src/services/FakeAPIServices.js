@@ -1,15 +1,17 @@
-import {getLocalData} from "./StorageServices"
+
 
 const _createFakeRequest = (data, timeout = 500) => {
-    const isError = Math.random() < 0.1
+    const isError = Math.random() < 0.05
 
     return new Promise((resolve, reject) => {
         if (isError) return reject(new Error('Something went wrong'))
 
-        resolve({
-            success: true,
-            data,
-        })
+        setTimeout(() => {
+            resolve({
+                success: true,
+                data,
+            })
+        }, timeout)
     })
 }
 

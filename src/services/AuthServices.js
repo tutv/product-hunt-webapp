@@ -2,7 +2,7 @@ import {getLocalData, setLocalData} from "./StorageServices"
 
 const _store = {
     state: {
-        accessToken: getLocalData('refreshToken', ''),
+        accessToken: getLocalData('accessToken', ''),
         user: getLocalData('user', {})
     },
     subscribers: []

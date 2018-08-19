@@ -52,7 +52,7 @@ class LoginForm extends Component {
                     <div className="Logo">
                         <img src="/assets/images/kitty.webp" alt="Kitty"/>
                     </div>
-                    <h1 className="Title">Register to Product Hunt</h1>
+                    <h1 className="Title">Login to Product Hunt</h1>
                     <div className="Description">We're a community of product people here to geek out and discover new,
                         interesting products.
                     </div>
@@ -77,7 +77,7 @@ class LoginForm extends Component {
                     </div>
 
                     <div className="form-group">
-                        <button type="submit" className="btn btn-primary">Register</button>
+                        <button type="submit" className="btn btn-primary">Login</button>
                     </div>
                 </form>
             </div>

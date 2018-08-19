@@ -1,0 +1,44 @@
+.LoginForm {
+    max-width: 460px;
+    background-color: #fff;
+    padding: 20px 50px;
+    flex: 1;
+    border: 1px solid #e8e8e8;
+
+    .Top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .Logo {
+            margin-top: 10px;
+            margin-bottom: 20px;
+
+            img {
+                width: 100px;
+                height: auto;
+            }
+        }
+
+        .Title {
+            line-height: 32px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .Description {
+            font-size: 16px;
+            font-weight: 300;
+            color: #999;
+            margin-bottom: 20px;
+        }
+    }
+
+    .Form {
+        .form-group {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

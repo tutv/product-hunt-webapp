@@ -1,5 +1,3 @@
-
-
 const _createFakeRequest = (data, timeout = 500) => {
     const isError = Math.random() < 0.05
 
@@ -24,7 +22,10 @@ export const login = ({email, password}) => {
         return Promise.reject(new Error('Password is incorrect.'))
     }
 
-    return _createFakeRequest({id: 1, email: 'tutv95@gmail.com', avatar: 'https://www.gravatar.com/avatar/1'})
+    const profile = {id: 1, email: 'tutv95@gmail.com', avatar: 'https://www.gravatar.com/avatar/1'}
+    const accessToken = 'abc'
+
+    return _createFakeRequest({profile, accessToken})
 }
 
 export const register = ({email, password}) => {

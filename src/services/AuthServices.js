@@ -63,3 +63,8 @@ export const setAccessToken = accessToken => {
 }
 
 export const getAccessToken = () => getLocalData('accessToken', '') || _store.state.accessToken || ''
+
+export const logout = () => {
+    setAccessToken('')
+    setUserData({})
+}

@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {
     Collapse, DropdownItem,
@@ -9,7 +9,6 @@ import {
     Navbar,
     NavbarBrand, NavbarToggler,
     NavItem,
-    NavLink,
     UncontrolledDropdown
 } from "reactstrap"
 import withAuthentication from "../shared/withAuthentication"
@@ -25,8 +24,13 @@ class Header extends Component {
         })
     }
 
+    _handleClickLogout = e => {
+        e.preventDefault()
+        this.props.logout()
+    }
+
     render() {
-        const {isAuthenticated} = this.props
+        const {isAuthenticated, user} = this.props
 
         return (
             <div className='Header'>
@@ -41,11 +45,11 @@ class Header extends Component {
                                 {
                                     !isAuthenticated &&
                                     <Fragment>
-                                        <NavItem>
-                                            <NavLink tag={Link} to="/login">Login</NavLink>
+                                        <NavItem className="ButtonNav">
+                                            <NavLink activeClassName="active" className="nav-link" to="/login">Login</NavLink>
                                         </NavItem>
-                                        <NavItem>
-                                            <NavLink tag={Link} to="/register">Register</NavLink>
+                                        <NavItem className="ButtonNav">
+                                            <NavLink activeClassName="active" className="nav-link" to="/register">Register</NavLink>
                                         </NavItem>
                                     </Fragment>
                                 }
@@ -54,18 +58,15 @@ class Header extends Component {
                                     !!isAuthenticated &&
                                     <UncontrolledDropdown nav inNavbar>
                                         <DropdownToggle nav caret>
-                                            Options
+                                            <img className="Avatar" src={user.avatar} alt={user.name}/>
                                         </DropdownToggle>
                                         <DropdownMenu right>
                                             <DropdownItem>
-                                                Option 1
-                                            </DropdownItem>
-                                            <DropdownItem>
-                                                Option 2
+                                                Settings
                                             </DropdownItem>
                                             <DropdownItem divider/>
-                                            <DropdownItem>
-                                                Reset
+                                            <DropdownItem onClick={this._handleClickLogout}>
+                                                Logout
                                             </DropdownItem>
                                         </DropdownMenu>
                                     </UncontrolledDropdown>
@@ -82,6 +83,7 @@ class Header extends Component {
 Header.propTypes = {
     isAuthenticated: PropTypes.bool.isRequired,
     user: PropTypes.object.isRequired,
+    logout: PropTypes.func.isRequired,
 }
 
 export default withAuthentication(Header)

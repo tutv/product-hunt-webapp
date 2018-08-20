@@ -1,10 +1,18 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import withAuthentication from "../shared/withAuthentication"
+import getHistory from "../../store/getHistory"
+
+const history = getHistory()
 
 class ProductItem extends Component {
     _handleClickVote = (e) => {
         e.preventDefault()
+
+        if (!this.props.isAuthenticated) {
+            return history.push('/login')
+        }
 
         const {voted, id} = this.props.product
         if (voted) return
@@ -63,6 +71,7 @@ class ProductItem extends Component {
 ProductItem.propTypes = {
     product: PropTypes.object.isRequired,
     onVote: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
 }
 
-export default ProductItem
+export default withAuthentication(ProductItem)

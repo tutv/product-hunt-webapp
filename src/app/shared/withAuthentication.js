@@ -25,6 +25,6 @@ export default WrappedComponent => class WithAuthentication extends Component {
     }
 
     render() {
-        return <WrappedComponent logout={AuthServices.logout} {...this.state}/>
+        return <WrappedComponent {...this.props} logout={AuthServices.logout} {...this.state}/>
     }
 }
